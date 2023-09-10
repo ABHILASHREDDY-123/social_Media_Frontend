@@ -1,5 +1,5 @@
 export const signout = (next) =>{
-    if(typeof(window) !== undefined){
+    if(typeof(window)){
       localStorage.removeItem("jwt");
   
     }
@@ -16,7 +16,7 @@ export const signout = (next) =>{
     })
   }
   export const isAuthenticated = () =>{
-       if(typeof(window) != undefined){
+       if(typeof(window)){
         if(localStorage.getItem("jwt")){
           return JSON.parse(localStorage.getItem("jwt"));
         }

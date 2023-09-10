@@ -17,7 +17,7 @@ class Signin extends Component{
    
  authenticate = (jwt,next)=>{
     // console.log(jwt);
-    if(typeof window !== undefined){
+    if(typeof(window)){
      localStorage.setItem("jwt", JSON.stringify(jwt));
      next();
     }

@@ -161,7 +161,7 @@ class EditUser extends Component{
       );
     }
      render(){
-      const {_id,email,name,redirectToProfile,password,error,loading,about} = this.state;
+      const {_id,name,redirectToProfile,password,error,loading,about} = this.state;
       if(loading){
         return ( <div className="jumbotron mt-5">
         <h3 className="text-center" style={{display:"flex",justifyContent:"center"}}>

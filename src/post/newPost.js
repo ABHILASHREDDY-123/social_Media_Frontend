@@ -119,7 +119,7 @@ class NewPost extends Component{
       );
     }
      render(){
-      const {_id,redirectToProfile,error,loading} = this.state;
+      const {redirectToProfile,error,loading} = this.state;
       if(loading){
         return ( <div className="jumbotron mt-5">
         <h3 className="text-center" style={{display:"flex",justifyContent:"center"}}>
