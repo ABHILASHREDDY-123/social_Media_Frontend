@@ -21,18 +21,18 @@ const MainRouter = () =>{
        <Menu/> 
         <Routes>
             <Route  path="/" element={<Home/>}/>
-            <Route exact path="/signup-firststep" element={<Signupfirststep/>}/>
-            <Route exact path="/signup-completionstep/:token" element={<Signupcompletionstep/>}/>
-            <Route exact path="/signin" element={<Signin/>}/>
-            <Route exact path="/forgot-password" element={<ForgotPassword/>}/>
-            <Route exact path="/reset-password/:token" element={<ResetPassword/>}/>
-            <Route exact path="/user/:userId" element={<Profile />}/>
+            <Route  path="/signup-firststep" element={<Signupfirststep/>}/>
+            <Route  path="/signup-completionstep/:token" element={<Signupcompletionstep/>}/>
+            <Route  path="/signin" element={<Signin/>}/>
+            <Route  path="/forgot-password" element={<ForgotPassword/>}/>
+            <Route  path="/reset-password/:token" element={<ResetPassword/>}/>
+            <Route  path="/user/:userId" element={<Profile />}/>
             <Route exact path="/users" element={<User/>}/>
-            <Route exact path="/user/edit/:userId" element={<EditUser/>}/>
+            <Route  path="/user/edit/:userId" element={<EditUser/>}/>
             <Route exact path="/findpeople" element={<FindPeople/>}/>
             <Route exact path="/post/create" element={<NewPost/>}/>
-            <Route exact path="/post/:postId" element={<SinglePost/>}/>
-            <Route exact path="/post/edit/:postId" element={<EditPost/>}/>
+            <Route  path="/post/:postId" element={<SinglePost/>}/>
+            <Route  path="/post/edit/:postId" element={<EditPost/>}/>
           
           
             
