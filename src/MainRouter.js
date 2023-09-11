@@ -23,7 +23,6 @@ const MainRouter = () =>{
             <Route exact path="/" element={<Home/>}/>
             <Route exact path="/signup-firststep" element={<Signupfirststep/>}/>
             <Route exact path="/signup-completionstep/:token" element={<Signupcompletionstep/>}/>
-           
             <Route exact path="/signin" element={<Signin/>}/>
             <Route exact path="/forgot-password" element={<ForgotPassword/>}/>
             <Route exact path="/reset-password/:token" element={<ResetPassword/>}/>

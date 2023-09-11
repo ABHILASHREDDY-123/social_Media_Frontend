@@ -118,7 +118,7 @@ class Profile extends Component{
 
             <div className=" row justify-content-around" style={{marginTop:"4rem"}}>
          <div className=" ml-5" style={{width:"auto",marginRight:"4rem"}}>
-            <img style={{height:"auto",width:"300px"}}
+            <img style={{maxHeight:"290px",maxWidth:"350px",height:"auto",width:"auto"}}
             className="img-thumbnail" 
             src={photoUrl} alt={user.name}
             onError={i=>i.target.src=`${DefaultProfile}`}

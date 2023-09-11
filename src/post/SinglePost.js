@@ -172,7 +172,7 @@ class SinglePost extends Component {
                     }}>
                         <img
                             src={photoUrl}
-                            style={{ width: "auto", height: "250px" }}
+                            style={{ maxWidth: "350px", maxHeight: "300px",width:"auto",height:"auto" }}
                             className="card-img-top img-thumbnail"
                             onError={i => i.target.src = `${postx}`}
                             alt={post.name} />
