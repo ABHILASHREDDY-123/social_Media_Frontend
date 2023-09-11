@@ -20,7 +20,7 @@ const MainRouter = () =>{
        <div>
        <Menu/> 
         <Routes>
-            <Route exact path="/" element={<Home/>}/>
+            <Route  path="/" element={<Home/>}/>
             <Route exact path="/signup-firststep" element={<Signupfirststep/>}/>
             <Route exact path="/signup-completionstep/:token" element={<Signupcompletionstep/>}/>
             <Route exact path="/signin" element={<Signin/>}/>
@@ -28,7 +28,7 @@ const MainRouter = () =>{
             <Route exact path="/reset-password/:token" element={<ResetPassword/>}/>
             <Route exact path="/user/:userId" element={<Profile />}/>
             <Route exact path="/users" element={<User/>}/>
-            <Route exact path="user/edit/:userId" element={<EditUser/>}/>
+            <Route exact path="/user/edit/:userId" element={<EditUser/>}/>
             <Route exact path="/findpeople" element={<FindPeople/>}/>
             <Route exact path="/post/create" element={<NewPost/>}/>
             <Route exact path="/post/:postId" element={<SinglePost/>}/>
