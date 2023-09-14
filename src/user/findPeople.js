@@ -12,7 +12,9 @@ class FindPeople extends Component {
         this.state = {
             users: [],
             loading:false,
-            error:""
+            search:"",
+            error:"",
+            searchedUsers:[]
         }
     }
 
@@ -29,6 +31,7 @@ class FindPeople extends Component {
                 else {
                     this.setState({
                         users: data,
+                        searchedUsers:data,
                         loading:false
                     });
                 }
@@ -61,10 +64,37 @@ class FindPeople extends Component {
             this.setState({error:err});
         })
     }
+    isMatch = (a,b) =>{
+       let x = a.length;
+       let y = b.length;
+       let cnt=0;
+       let i=0;
+       let j=0;
+       while(i<x && j<y){
+        if(a[i]==b[j]){i++;j++;cnt++;}
+        else {j++;}
+       }
+       if(10*cnt<7*x){return 1;}
+       return 0;
+    }
+    findSearch = (a) =>{
+        if(a.length){
+           this.setState({searchedUsers:this.users});
+        }
+        else {
+            let search = [];
+           for(let i=0;i<this.users.length;i++){
+            if(this.isMatch(a,this.users[i])){
+               search.push(this.users[i]);
+            }
+           }
+           this.setState({searchedUsers:search});
+        }
+    }
     renderUsers = (users) => {
         const id = isAuthenticated().user._id;
         const token = isAuthenticated().token;
-        if(users===null || (users.length)===0){
+        if(users===null || users===undefined || (users.length)===0){
             return (
                 <div className="flexbox-container row  mt-5 "  style={{display:"flex",justifyContent:"flex-start",marginLeft:"5rem"}} >
                     
@@ -75,6 +105,7 @@ class FindPeople extends Component {
         }
         return (
             <div className="flexbox-container row  mt-5 "  style={{display:"flex",justifyContent:"flex-start",marginLeft:"5rem"}} >
+                <input onChange={(e)=>{this.findSearch(e.target.value)}} type="text"></input>
                 {users ? users.map((user, i) => {
                     const photoUrl = `${process.env.REACT_APP_API_URL}/preload/user/photo/${user._id}`;
                    
@@ -141,7 +172,7 @@ class FindPeople extends Component {
                         </p>:<></>}
                     </div>
                     </div>
-                    {this.renderUsers(users)}
+                    {this.renderUsers(this.searchedUsers)}
                
 
             </div>
